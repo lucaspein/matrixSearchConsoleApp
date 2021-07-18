@@ -1,0 +1,16 @@
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\bin\Debug\net5.0\matrixSearch.exe
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\bin\Debug\net5.0\matrixSearch.deps.json
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\bin\Debug\net5.0\matrixSearch.runtimeconfig.json
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\bin\Debug\net5.0\matrixSearch.runtimeconfig.dev.json
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\bin\Debug\net5.0\matrixSearch.dll
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\bin\Debug\net5.0\ref\matrixSearch.dll
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\bin\Debug\net5.0\matrixSearch.pdb
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\obj\Debug\net5.0\matrixSearch.csprojAssemblyReference.cache
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\obj\Debug\net5.0\matrixSearch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\obj\Debug\net5.0\matrixSearch.AssemblyInfoInputs.cache
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\obj\Debug\net5.0\matrixSearch.AssemblyInfo.cs
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\obj\Debug\net5.0\matrixSearch.csproj.CoreCompileInputs.cache
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\obj\Debug\net5.0\matrixSearch.dll
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\obj\Debug\net5.0\ref\matrixSearch.dll
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\obj\Debug\net5.0\matrixSearch.pdb
+C:\Users\Lucas Pein\Source\Repos\matrixSearchConsoleApp\matrixSearch\obj\Debug\net5.0\matrixSearch.genruntimeconfig.cache
