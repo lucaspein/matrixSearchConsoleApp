@@ -1,6 +1,6 @@
 # matrixSearchConsoleApp
 
-1.- IEnumerable input matrix & worsStream
+1.- IEnumerable input matrix & wordStream
 
 2.- Max 64x64
 
