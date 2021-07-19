@@ -1,4 +1,5 @@
 ﻿using matrixSearch.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,7 +8,7 @@ namespace matrixSearch.Features
     public class WordFinder
     {
         #region vars
-
+        private const int maxTakenResult = 10;
         private IEnumerable<string> _matrix;
         private List<Counter> _found;
         private int _rowCount = 0, _columnCount = 0;
@@ -25,31 +26,42 @@ namespace matrixSearch.Features
 
         #region public
         public IEnumerable<string> Find(IEnumerable<string> wordstream)
-        {
-            var i = 0;
+        {            
             this._matrix.ToList().ForEach(row =>
             {
                 this.CheckWord(row, wordstream);
-                if (i < this._columnCount)
-                {
-                    var column = this.GetColumn(i).ToLower();
-                    this.CheckWord(column, wordstream);
-                    i++;
-                }
             });
+
+            for (int columnIndex = 0; columnIndex < this._columnCount; columnIndex++)
+            {
+                try
+                {
+                    if (columnIndex < this._columnCount)
+                    {
+                        var column = this.GetColumn(columnIndex).ToLower();
+                        this.CheckWord(column, wordstream);
+                        columnIndex++;
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Some rows don't have the same number of columns as the other rows.");
+                }
+            }            
             
-            return from f in _found orderby f.Times descending select f.Word;
+            var result = from f in _found orderby f.Times descending select f.Word;
+            return result.Take(maxTakenResult);
         }
         #endregion
 
         #region private        
 
-        private string GetColumn(int i)
+        private string GetColumn(int columnIndex)
         {
             var column = string.Empty;
-            for (var j = 0; j < _rowCount; j++)
+            for (var i = 0; i < _rowCount; i++)
             {
-                column += this._matrix.ToList()[j][i];
+                column += this._matrix.ToList()[i][columnIndex];
             }
             return column;
         }
@@ -60,7 +72,7 @@ namespace matrixSearch.Features
             {
                 if (row.ToLower().Contains(word.ToLower()))
                 {
-                    WordFound(word);
+                    this.WordFound(word);
                 }
             });
         }
@@ -77,6 +89,7 @@ namespace matrixSearch.Features
                 _found.Add(new Counter() { Word = word, Times = 1 });
             }
         } 
+
         #endregion
     }
 }

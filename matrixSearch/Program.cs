@@ -16,21 +16,19 @@ namespace matrixSearch
             if (args.Length > 0)
             {
                 Console.Clear();
-                matrix = args[0].Split(',');                
-                
-                matrix = Mock.MatrixData.GetMatrix();
-
+                matrix = args[0].Split(',');
                 words = args[1].Split(',');
+                //matrix = Mock.MatrixData.GetMatrix(); //for testing only
 
                 var finder = new WordFinder(matrix);
                 found = finder.Find(words);
                                 
-                Console.WriteLine(found.Any()? "Words order by times: " + string.Join(',', found) : "No occurrence found.");
+                Console.WriteLine(found.Any()? "Found words ordered by number of occurrences: " + string.Join(',', found) : "the searched words were not found");
                 Console.ReadLine();
             }
             else
             {
-                Console.WriteLine("No args found.");                
+                Console.WriteLine("No input data found.");                
             }           
 
             
