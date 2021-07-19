@@ -1,18 +1,29 @@
 # matrixSearchConsoleApp
 
 1.- IEnumerable input matrix & worsStream
+
 2.- Max 64x64
+
 3.- All the rows has the same length
+
 4.- Horizontal words would be searched from right to left, vertical should up to down
+
 5.- The matrix could not be squared
+
 6.- Top 10 found words order by occurrence
+
 7.- Return empty IEnumerable if no words found
 
+
 Analysis
-Read the matrix data only once in each direction
-Data shouldn't be validated
-It would break if not all the rows have the same number of characters
-The matrix may not be squared, the vertical & horizontal searches must be separated
+
+i. Read the matrix data only once in each direction
+
+ii. Data shouldn't be validated
+
+iii.It would break if not all the rows have the same number of characters
+
+iv.The matrix may not be squared, the vertical & horizontal searches must be separated
 
  public class WordFinder
     {
