@@ -1,43 +1,64 @@
-﻿using System;
+﻿using matrixSearch.Model;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace matrixSearch.Features
 {
-    public class Counter
-    {
-        public int Times { get; set; }
-        public string Word { get; set; }
-    }
-
     public class WordFinder
     {
+        #region vars
+
         private IEnumerable<string> _matrix;
-
         private List<Counter> _found;
+        private int _rowCount = 0, _columnCount = 0;
+        #endregion
 
+        #region constructor
         public WordFinder(IEnumerable<string> matrix)
         {
             this._matrix = matrix;
             this._found = new List<Counter>();
+            this._rowCount = matrix.Count();
+            this._columnCount = matrix.First().Length;
         }
+        #endregion
 
+        #region public
         public IEnumerable<string> Find(IEnumerable<string> wordstream)
         {
-            this._matrix.ToList().ForEach(row => {
-                this.CheckRow(row, wordstream);
+            var i = 0;
+            this._matrix.ToList().ForEach(row =>
+            {
+                this.CheckWord(row, wordstream);
+                if (i < this._columnCount)
+                {
+                    var column = this.GetColumn(i).ToLower();
+                    this.CheckWord(column, wordstream);
+                    i++;
+                }
             });
             
-            var res = from f in _found orderby f.Times descending select f.Word;
-            return res;
+            return from f in _found orderby f.Times descending select f.Word;
+        }
+        #endregion
+
+        #region private        
+
+        private string GetColumn(int i)
+        {
+            var column = string.Empty;
+            for (var j = 0; j < _rowCount; j++)
+            {
+                column += this._matrix.ToList()[j][i];
+            }
+            return column;
         }
 
-        private void CheckRow(string row, IEnumerable<string> wordstream)
+        private void CheckWord(string row, IEnumerable<string> wordstream)
         {
-            wordstream.ToList().ForEach(word => { 
-                if(row.Contains(word))
+            wordstream.ToList().ForEach(word =>
+            {
+                if (row.ToLower().Contains(word.ToLower()))
                 {
                     WordFound(word);
                 }
@@ -52,9 +73,10 @@ namespace matrixSearch.Features
                 alreadyAdded.Times += 1;
             }
             else
-            {                
+            {
                 _found.Add(new Counter() { Word = word, Times = 1 });
             }
-        }
+        } 
+        #endregion
     }
 }

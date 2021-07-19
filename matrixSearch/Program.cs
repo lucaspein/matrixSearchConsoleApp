@@ -8,29 +8,32 @@ namespace matrixSearch
     class Program
     {
         static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
+        {            
             var matrix = Enumerable.Empty<string>();
             var words = Enumerable.Empty<string>();
             var found = Enumerable.Empty<string>();
 
             if (args.Length > 0)
             {
-                Console.WriteLine("with args!");
-                matrix = args[0].Split(',');
+                Console.Clear();
+                matrix = args[0].Split(',');                
+                
+                matrix = Mock.MatrixData.GetMatrix();
+
                 words = args[1].Split(',');
+
+                var finder = new WordFinder(matrix);
+                found = finder.Find(words);
+                                
+                Console.WriteLine(found.Any()? "Words order by times: " + string.Join(',', found) : "No occurrence found.");
+                Console.ReadLine();
             }
             else
             {
-                matrix = new string[] { "chill", "fgwio", "chill", "pqnsd", "uvdxy" };
-                words = new string[] { "chill", "fgwio", "wind" };
+                Console.WriteLine("No args found.");                
             }           
 
-            var finder = new WordFinder(matrix);
-            found = finder.Find(words).AsEnumerable<string>();
-            Console.Write("Words found order by times: ");
-            Console.WriteLine(found);
-            Console.ReadLine();
+            
         }
 
 

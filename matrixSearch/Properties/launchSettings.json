@@ -2,7 +2,7 @@
   "profiles": {
     "matrixSearch": {
       "commandName": "Project",
-      "commandLineArgs": "chill,fgwio,chill,pqnsd,uvdxy chill,fgwio,wind"
+      "commandLineArgs": "abcdc,fgwio,chill,pqnsd,uvdxy chill,cold,wind"
     }
   }
 }
