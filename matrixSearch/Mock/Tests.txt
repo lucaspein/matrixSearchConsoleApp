@@ -1,2 +1,3 @@
-﻿CoLdd,abcdc,fgwio,chill,pqnsd,uvdxy,coldd,CHILL chill,cold,wind
+﻿abcdc,fgwio,chill,pqnsd,uvdxy chill,cold,wind
+CoLdd,abcdc,fgwio,chill,pqnsd,uvdxy,coldd,CHILL chill,cold,wind
 xxxxxxxxx,xxlxxxxx,xxuxxxluk,xxkxxxxxx,xxxxlukxx luk

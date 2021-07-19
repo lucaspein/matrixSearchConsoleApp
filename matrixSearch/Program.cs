@@ -20,11 +20,17 @@ namespace matrixSearch
                 words = args[1].Split(',');
                 //matrix = Mock.MatrixData.GetMatrix(); //for testing only
 
-                var finder = new WordFinder(matrix);
-                found = finder.Find(words);
-                                
-                Console.WriteLine(found.Any()? "Found words ordered by number of occurrences: " + string.Join(',', found) : "the searched words were not found");
-                Console.ReadLine();
+                try
+                {
+                    var finder = new WordFinder(matrix);
+                    found = finder.Find(words);
+                    Console.WriteLine(found.Any() ? "Found words ordered by number of occurrences: " + string.Join(',', found) : "the searched words were not found");
+                    Console.ReadLine();
+                }
+                catch
+                {
+                    Console.WriteLine("Some rows don't have the same number of columns as the other rows.");
+                }               
             }
             else
             {
